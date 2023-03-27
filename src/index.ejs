@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link the main css file -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- link the main js file -->
+    <script type="module" src="js/app.js" defer></script>
+</head>
+<body style="background-color: #051d28;">
+        <!-- ai2html -->
+        <section class="ai2html">
+            <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                <!-- This is the line that matters for import -->
+                <%- include('./ai2html-output/Start.ejs'); %>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- scrolly -->
+        <section id="doge-scrolly">
+
+        <!-- define the scroll sections -->
+        <% const blocks=
+            [
+            { 
+                "filename" : "doge_1" , 
+                "anno" : "<div class='h5 fw-bold'> Australia </div>  experienced growth of 4.1%. Australia (+3.4%) remained a top 10 market globally and New Zealand saw a rise in streaming revenues push the overall market to growth of 8.2%." 
+            }, 
+            { 
+                "filename" : "doge_2" , 
+                "anno": "<div class='h5 fw-bold'> Sub-Saharan Africa </div> also split out for the first time in IFPI’s reporting – saw revenue growth of 9.6% in 2021, largely driven by streaming. Ad-supported was particularly strong in this region, with revenues from this format growing by 56.4%."
+            },
+                    { 
+                "filename" : "doge_3" , 
+                "anno": "<div class='h5 fw-bold'> Europe </div>  the second-largest recorded music region in the world, grew by 15.4%, a steep increase on the prior year’s growth rate of 3.2%. The region’s biggest markets all saw double digit percentage growth: UK (+13.2%), Germany (+12.6%) and France (+11.8%)." 
+                },
+                { 
+            "filename" : "doge_4" , 
+            "anno": "<div class='h5 fw-bold'> Asia </div> grew by 16.1%, with its largest market, Japan, seeing growth of 9.3%. Excluding Japan the region experienced a 24.6% climb in revenues. In a continuing trend, Asia also accounted for a significant share of the global physical revenues (49.6%)." 
+            },
+            { 
+        "filename" : "doge_5" , 
+        "anno": "<div class='h5 fw-bold'> USA & Canada </div> region grew by 22.0% in 2021, outpacing the global growth rate. The USA market alone grew by 22.6% and Canadian recorded music revenues grew by 12.6%." 
+        },
+        { 
+    "filename" : "doge_8" , 
+    "anno": "<div class='h5 fw-bold'> Latin America </div> saw growth of 31.2% – one of the highest growth rates globally. Streaming accounted for 85.9% of the market, one of the highest proportions in any region." 
+    },
+    { 
+"filename" : "doge_6" , 
+"anno": "<div class='h5 fw-bold'> Middle East and North Africa </div>  split out as a separate region in the Global Music Report for the first time – experienced growth of 35.0%; the fastest regional growth rate globally. Streaming was a particularly strong driver in the region, with a 95.3% share of the market." 
+},
+{ 
+"filename" : "doge_7" , 
+"anno": "_blank-slide_" 
+}
+                
+            ] 
+        %>
+        <!-- every { filename, anno } object makes a new section -->
+
+        <!-- include the component -->
+        <%- include('./scrolly/scrolly.ejs', {id: "doge-scrolly" , blocks: blocks }); %>
+        
+        </section>
+
+        <!-- ai2html -->
+        <section class="ai2html">
+            <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                <!-- This is the line that matters for import -->
+                <%- include('./ai2html-output/End.ejs'); %>
+                </div>
+            </div>
+            </div>
+        </section>
+</body>
+</html>
